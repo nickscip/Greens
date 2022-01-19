@@ -5,11 +5,25 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 function HomeScreen() {
   return (
-    <View>
-      <Pressable>
-        <Text style={styles.text}>Find Art</Text>
-      </Pressable>
-    </View>
+    
+      <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'center'}}>
+        <View>
+          <Pressable style={styles.homeButton}>
+            <Text style={styles.buttonText}>Find Art</Text>
+          </Pressable>
+        </View>
+        <View>
+          <Pressable style={styles.homeButton}>
+            <Text style={styles.buttonText}>My Tickets</Text>
+          </Pressable>
+        </View>
+        <View>
+          <Pressable style={styles.homeButton}>
+            <Text style={styles.buttonText}>Upcoming Tours</Text>
+          </Pressable>
+        </View>
+      </View>
+    
   );
 }
 
@@ -29,19 +43,17 @@ export default App;
 
 const styles = StyleSheet.create({
   homeButton: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingVertical: 12,
-    paddingHorizontal: 32,
-    borderRadius: 4,
-    elevation: 3,
-    backgroundColor: 'blue',
+    backgroundColor: 'pink',
+    borderWidth: 1,
+    width: 100,
+    height: 100
+
+
   },
-  text: {
-    fontSize: 16,
-    lineHeight: 21,
-    fontWeight: 'bold',
-    letterSpacing: 0.25,
-    color: 'white',
+  buttonText: {
+    fontSize: 14,
+    fontFamily: 'Times New Roman',
+    color: 'black',
+
   },
 });
