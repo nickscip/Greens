@@ -1,16 +1,24 @@
 import * as React from 'react';
+import { View, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './src/screens/HomeScreen';
 import Events from './src/screens/Events';
+import Logo from './src/components/Logo';
 
 const Stack = createNativeStackNavigator();
+
 
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="SMART APP">
-        <Stack.Screen name="SMART APP" component={HomeScreen} />
+      <Stack.Navigator initialRouteName="Home" screenOptions={{contentStyle: {backgroundColor: 'white'}}}>
+        <Stack.Screen 
+          name="Home"
+          component={HomeScreen}
+          options={{ headerTitle: (props) => <Logo/>, headerTransparent: true}}
+          
+        />
         <Stack.Screen name="Events" component={Events} options={{ title: 'SMART APP' }}/>
       </Stack.Navigator>
     </NavigationContainer>
