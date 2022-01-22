@@ -5,9 +5,9 @@ function HomeScreen() {
   return (
     <React.Fragment>
       <View style={styles.topPageNavigator}>
-        <Text style={{fontSize: 20, fontFamily: 'Times New Roman'}}>Events Near You</Text>
+        <Text style={{fontSize: 25, fontFamily: 'Times New Roman'}}>Events Near You</Text>
         <Pressable>
-          <Text style={{textAlign: 'right', fontSize: 15, fontFamily: 'Times New Roman'}}>More ></Text>
+          <Text style={{textAlign: 'right', fontSize: 18, fontFamily: 'Times New Roman'}}>More ></Text>
         </Pressable>
       </View>
 
@@ -67,9 +67,9 @@ function HomeScreen() {
       </View>
 
       <View style={styles.bottomPageNavigator}>
-        <Text style={{fontSize: 20, fontFamily: 'Times New Roman'}}>Local Artists</Text>
+        <Text style={{fontSize: 25, fontFamily: 'Times New Roman'}}>Local Artists</Text>
         <Pressable>
-          <Text style={{textAlign: 'right', fontSize: 15, fontFamily: 'Times New Roman'}}>More ></Text>
+          <Text style={{textAlign: 'right', fontSize: 18, fontFamily: 'Times New Roman'}}>More ></Text>
         </Pressable>
       </View>
 
@@ -129,7 +129,8 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginTop: 110
+    marginTop: 110,
+    alignItems: 'flex-end'
   },
 
   eventBanner: {
@@ -173,7 +174,8 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginTop: 5
+    marginTop: 5,
+    alignItems: 'flex-end'
   },
 
   artistButton: {
