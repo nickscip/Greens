@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, Text, Button, Pressable, StyleSheet, ScrollView } from 'react-native';
+import { View, Text, Button, Pressable, StyleSheet, ScrollView, Image, ImageBackground } from 'react-native';
 
 function HomeScreen() {
   return (
@@ -12,9 +12,12 @@ function HomeScreen() {
       </View>
 
       <View style={styles.eventBanner}>
-        <Pressable>
-          <Text></Text>
-        </Pressable>
+          <Image 
+            source={require('../../assets/AST.png')}
+            resizeMode='stretch'
+            style={{width: 380, height: 140}}
+
+          />
       </View>
 
       <View style={{alignItems: 'center'}}>
@@ -24,28 +27,36 @@ function HomeScreen() {
 
       <View style={{ flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'center', paddingTop: 20, marginBottom: 20}}>
         <Pressable style={styles.homeButton}>
-          <Text style={styles.buttonText}>Find Art</Text>
+          <Image source={require('../../assets/Location.png')}/>
+          <Text style={[styles.buttonText,{marginTop:5}]}>Find Art</Text>
         </Pressable>
       
         <Pressable style={styles.homeButton}>
+          <Image source={require('../../assets/Ticket.png')}/>
           <Text style={styles.buttonText}>My Tickets</Text>
         </Pressable>
       
-        <Pressable style={styles.homeButton}>
+        <Pressable style={[styles.homeButton, {paddingBottom:5}]}>
+          <Image source={require('../../assets/Flag.png')}/>
           <Text style={styles.buttonText}>Upcoming Tours</Text>
         </Pressable>
       </View>
 
       <View style={{ flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'center'}}>
         <Pressable style={styles.homeButton}>
+          <Image source={require('../../assets/Favorite.png')}/>
           <Text style={styles.buttonText}>My Favorites</Text>
         </Pressable>
       
         <Pressable style={styles.homeButton}>
-          <Text style={styles.buttonText}>QR Scanner</Text>
+          <Image 
+            source={require('../../assets/QrCode.png')}
+          />
+          <Text style={[styles.buttonText,{marginTop: 5}]}>QR Scanner</Text>
         </Pressable>
       
         <Pressable style={styles.homeButton}>
+          <Image source={require('../../assets/Person.png')}/>
           <Text style={styles.buttonText}>My Profile</Text>
         </Pressable>
       </View>
@@ -66,19 +77,44 @@ function HomeScreen() {
       <ScrollView horizontal={true}>
         <View style={{flexDirection: 'row', marginHorizontal: 15, marginTop: 10}}>
           <Pressable style={styles.artistButton}>
-            <Text></Text>
+            <ImageBackground
+              source={require('../../assets/Hunter.jpg')}
+              style={{width: 100, height: 115}}
+              imageStyle={{ borderRadius: 8, borderWidth: 1}}>
+                <View style={{paddingLeft: 4, paddingTop: 95}}>
+                  <Text style={styles.artistText}>Hunter Ash</Text>
+                </View>
+            </ImageBackground>
           </Pressable>
           <Pressable style={styles.artistButton}>
-            <Text></Text>
+          <ImageBackground
+              source={require('../../assets/Jason.jpg')}
+              style={{width: 100, height: 115}}
+              imageStyle={{ borderRadius: 8, borderWidth: 1}}>
+                <View style={{paddingLeft: 4, paddingTop: 95}}>
+                  <Text style={styles.artistText}>Jason Eatherly</Text>
+                </View>
+            </ImageBackground>
           </Pressable>
           <Pressable style={styles.artistButton}>
-            <Text></Text>
+            <ImageBackground
+              source={require('../../assets/Ryan.jpg')}
+              style={{width: 100, height: 115}}
+              imageStyle={{ borderRadius: 8, borderWidth: 1}}>
+                <View style={{paddingLeft: 4, paddingTop: 95}}>
+                  <Text style={styles.artistText}>Ryan Runcie</Text>
+                </View>
+            </ImageBackground>
           </Pressable>
           <Pressable style={styles.artistButton}>
-            <Text></Text>
-          </Pressable>
-          <Pressable style={styles.artistButton}>
-            <Text></Text>
+            <ImageBackground
+              source={require('../../assets/Vy.jpg')}
+              style={{width: 100, height: 115}}
+              imageStyle={{ borderRadius: 8, borderWidth: 1}}>
+                <View style={{paddingLeft: 4, paddingTop: 95}}>
+                  <Text style={styles.artistText}>Vy Ngo</Text>
+                </View>
+            </ImageBackground>
           </Pressable>
         </View>
       </ScrollView>
@@ -93,17 +129,15 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginTop: 100
+    marginTop: 110
   },
 
   eventBanner: {
-    marginHorizontal: 20, 
+    paddingHorizontal: 20, 
     flexDirection: 'row', 
-    marginTop: 10, 
-    borderWidth: 1, 
-    backgroundColor: 'white', 
-    height: 130, 
-    borderRadius: 8
+    paddingTop: 10,
+    borderRadius: 8,
+    justifyContent: 'center',
   },
 
   lineDivider: {
@@ -116,11 +150,11 @@ const styles = StyleSheet.create({
   
   homeButton: {
     backgroundColor: 'white',
-    width: 100,
-    height: 100,
+    width: 110,
+    height: 110,
     alignItems: 'center',
     justifyContent: 'flex-end',
-    padding: 15,
+    paddingVertical: 15,
     borderRadius: 8,
     shadowColor: 'black',
     shadowOffset: {width: 0, height: 4},
@@ -128,7 +162,7 @@ const styles = StyleSheet.create({
 
   },
   buttonText: {
-    fontSize: 14,
+    fontSize: 17,
     fontFamily: 'Times New Roman',
     color: 'black',
     textAlign: 'center',
@@ -144,14 +178,19 @@ const styles = StyleSheet.create({
 
   artistButton: {
     backgroundColor: 'white',
-    borderWidth: 1,
     width: 100,
-    height: 100,
-    alignItems: 'center',
-    justifyContent: 'flex-end',
-    padding: 15,
+    height: 115,
     borderRadius: 8,
     marginHorizontal: 5
+  },
+
+  artistText:{
+    color: 'white',
+    fontSize: 13,
+    fontFamily: 'Arial',
+    fontWeight: 'bold',
+    textShadowColor: 'black',
+    textShadowRadius: 2
   },
 });
 
