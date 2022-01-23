@@ -1,5 +1,8 @@
 import * as React from 'react';
 import { View, Text, Button, Pressable, StyleSheet, ScrollView, Image, ImageBackground } from 'react-native';
+import { ParallaxImage } from 'react-native-snap-carousel';
+import data from '../components/CarouselPics';
+import CustomSlider from '../components/CustomSlider';
 
 function HomeScreen() {
   return (
@@ -7,17 +10,12 @@ function HomeScreen() {
       <View style={styles.topPageNavigator}>
         <Text style={{fontSize: 25, fontFamily: 'Times New Roman'}}>Events Near You</Text>
         <Pressable>
-          <Text style={{textAlign: 'right', fontSize: 18, fontFamily: 'Times New Roman'}}>More ></Text>
+          <Text style={{textAlign: 'right', fontSize: 18, fontFamily: 'Arial'}}>More ></Text>
         </Pressable>
       </View>
 
       <View style={styles.eventBanner}>
-          <Image 
-            source={require('../../assets/AST.png')}
-            resizeMode='stretch'
-            style={{width: 380, height: 140}}
-
-          />
+        <CustomSlider data={data} />
       </View>
 
       <View style={{alignItems: 'center'}}>
@@ -62,14 +60,14 @@ function HomeScreen() {
       </View>
 
       <View style={{alignItems: 'center'}}>
-        <View style={styles.lineDivider}>
+        <View style={[styles.lineDivider, {marginTop: 25}]}>
         </View>
       </View>
 
       <View style={styles.bottomPageNavigator}>
         <Text style={{fontSize: 25, fontFamily: 'Times New Roman'}}>Local Artists</Text>
         <Pressable>
-          <Text style={{textAlign: 'right', fontSize: 18, fontFamily: 'Times New Roman'}}>More ></Text>
+          <Text style={{textAlign: 'right', fontSize: 18, fontFamily: 'Arial'}}>More ></Text>
         </Pressable>
       </View>
 
@@ -142,11 +140,11 @@ const styles = StyleSheet.create({
   },
 
   lineDivider: {
-    marginTop: 50,
     marginBottom: 10, 
     borderWidth: .75, 
     width: 240, 
-    borderColor: '#1c8aff'
+    borderColor: '#1c8aff',
+    backgroundColor: '#1c8aff'
   },
   
   homeButton: {
@@ -174,7 +172,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginTop: 5,
+    marginTop: 10,
     alignItems: 'flex-end'
   },
 
