@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { View, StyleSheet } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer} from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './src/screens/HomeScreen';
 import EventsScreen from './src/screens/Events';
@@ -11,7 +11,7 @@ const Stack = createNativeStackNavigator();
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Events" screenOptions={{contentStyle: {backgroundColor: 'white'}}}>
+      <Stack.Navigator initialRouteName="Home" screenOptions={{contentStyle: {backgroundColor: 'white'}}}>
         <Stack.Screen 
           name="Home"
           component={HomeScreen}
@@ -20,7 +20,7 @@ function App() {
         <Stack.Screen
           name="Events"
           component={EventsScreen}
-          options={{ headerTitle: (props) => <Logo/>, headerTransparent: true}}
+          options={{ headerTitle: (props) => <Logo/>, headerTransparent: true, headerBackVisible: true, headerBackTitleVisible: false}}
         />
       </Stack.Navigator>
     </NavigationContainer>

@@ -2,15 +2,9 @@ import React from 'react';
 import { Text, StyleSheet, Pressable, View, Image, ScrollView } from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign'
 
-const EventsScreen = () => {
+function EventsScreen({navigation}) {
     return(
     <React.Fragment>
-      <View>
-          <Image
-            source={require("../../assets/Back.png")}
-            style={{marginTop: 35}}
-          />
-      </View>
       <View style={styles.topPageNavigator}>
         <Text style={{fontSize: 25, fontFamily: 'Times New Roman'}}>Events Near You</Text>
       </View>
@@ -46,7 +40,7 @@ const styles = StyleSheet.create({
         marginHorizontal: 20,
         flexDirection: 'row',
         justifyContent: 'space-between',
-        marginTop: 10,
+        marginTop: 100,
         alignItems: 'flex-end'
     },
     eventSorter: {

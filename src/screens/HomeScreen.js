@@ -4,12 +4,12 @@ import { ParallaxImage } from 'react-native-snap-carousel';
 import data from '../components/CarouselPics';
 import CustomSlider from '../components/CustomSlider';
 
-function HomeScreen() {
+function HomeScreen({ navigation }) {
   return (
     <React.Fragment>
       <View style={styles.topPageNavigator}>
         <Text style={{fontSize: 25, fontFamily: 'Times New Roman'}}>Events Near You</Text>
-        <Pressable>
+        <Pressable onPress={() => navigation.navigate('Events')}>
           <Text style={{textAlign: 'right', fontSize: 18, fontFamily: 'Arial'}}>More ></Text>
         </Pressable>
       </View>
