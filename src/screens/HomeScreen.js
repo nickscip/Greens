@@ -123,6 +123,7 @@ function HomeScreen() {
 }
 
 const styles = StyleSheet.create({
+  
   topPageNavigator: {
     marginHorizontal: 20,
     flexDirection: 'row',
