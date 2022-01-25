@@ -7,18 +7,27 @@ import SearchBar from '../components/SearchBar';
 function EventsScreen({navigation}) {
 
     const eventList =  [
-        {name: 'AST', source: require("../../assets/AST.png")},
-        {name: 'Alchemy', source: require("../../assets/Mirrors.png")},
-        {name: 'Mirrors', source: require("../../assets/Alchemy.png")},
-        {name: 'Flourish', source: require("../../assets/Flourish.png")},
-        {name: 'Nightbloom', source: require("../../assets/Nightbloom.png")},
-    ]
+        {id: 1, name: 'AST', source: require("../../assets/AST.png")},
+        {id: 2, name: 'Alchemy', source: require("../../assets/Mirrors.png")},
+        {id: 3, name: 'Mirrors', source: require("../../assets/Alchemy.png")},
+        {id: 4, name: 'Flourish', source: require("../../assets/Flourish.png")},
+        {id: 5, name: 'Nightbloom', source: require("../../assets/Nightbloom.png")},
+    ];
 
     const [term, setTerm] = useState('');
+
+    var events = []
+    for (let i = 1; i <= 5; i++) {
+        events.push(
+            <View key = {eventList.id} ><Text>{eventList.name}</Text></View>
+        );
+    }
     
     return(
     <React.Fragment>
 
+        {events}
+    
         <View style={styles.topPageNavigator}>
             <Text style={{fontSize: 25, fontFamily: 'Times New Roman'}}>Events Near You</Text>
         </View>
@@ -28,7 +37,7 @@ function EventsScreen({navigation}) {
             <Icon name='downcircleo' size={16} color='black'/>
             <SearchBar term={term} onTermChange={newTerm => setTerm(newTerm)} />
         </View>
-        
+
         <View style={[styles.events, {marginTop: 15}]}>
             <SafeAreaView>
                 <FlatList
