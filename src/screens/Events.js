@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, Component} from 'react';
 import { Text, StyleSheet, Pressable, View, Image, FlatList, SafeAreaView } from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
 import SearchBar from '../components/SearchBar';
@@ -7,7 +7,7 @@ import SearchBar from '../components/SearchBar';
 function EventsScreen({navigation}) {
 
     const eventList =  [
-        {id: 1, name: 'AST', source: require("../../assets/AST.png")},
+        {id: 1, name: 'AST Austin Studio Tour', source: require("../../assets/AST.png")},
         {id: 2, name: 'Alchemy', source: require("../../assets/Mirrors.png")},
         {id: 3, name: 'Mirrors', source: require("../../assets/Alchemy.png")},
         {id: 4, name: 'Flourish', source: require("../../assets/Flourish.png")},
@@ -16,18 +16,9 @@ function EventsScreen({navigation}) {
 
     const [term, setTerm] = useState('');
 
-    var events = []
-    for (let i = 1; i <= 5; i++) {
-        events.push(
-            <View key = {eventList.id} ><Text>{eventList.name}</Text></View>
-        );
-    }
-    
     return(
     <React.Fragment>
 
-        {events}
-    
         <View style={styles.topPageNavigator}>
             <Text style={{fontSize: 25, fontFamily: 'Times New Roman'}}>Events Near You</Text>
         </View>
@@ -41,7 +32,14 @@ function EventsScreen({navigation}) {
         <View style={[styles.events, {marginTop: 15}]}>
             <SafeAreaView>
                 <FlatList
-                    data={eventList}
+                    data={eventList.filter((val=>{
+                        if (term == "") {
+                            return val
+                            }
+                        else if (val.name.toLowerCase().includes(term.toLowerCase())) {
+                            return val
+                            }
+                        }))}
                     renderItem={({item})=><Image source= {item.source} style={styles.eventImages}/>}
                     keyExtractor={item=>item.name}
                 />

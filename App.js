@@ -5,6 +5,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './src/screens/HomeScreen';
 import EventsScreen from './src/screens/Events';
 import Logo from './src/components/Logo';
+
+
 const Stack = createNativeStackNavigator();
 
 
