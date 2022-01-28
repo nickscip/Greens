@@ -7,6 +7,7 @@ import EventsScreen from './src/screens/Events';
 import Logo from './src/components/Logo';
 
 
+
 const Stack = createNativeStackNavigator();
 
 

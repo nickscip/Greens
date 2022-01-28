@@ -1,7 +1,8 @@
-import React, {useState, Component} from 'react';
+import React, {useState, Component, setState} from 'react';
 import { Text, StyleSheet, Pressable, View, Image, FlatList, SafeAreaView } from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
 import SearchBar from '../components/SearchBar';
+
 
 
 function EventsScreen({navigation}) {
@@ -24,12 +25,11 @@ function EventsScreen({navigation}) {
         </View>
 
         <View style={styles.eventSorter}>
-            <Text style={{fontSize: 16, fontFamily: 'Arial'}}>Sort By </Text>
-            <Icon name='downcircleo' size={16} color='black'/>
+            <Icon name= "search1" style={{marginLeft: 30, marginTop: 2, fontSize: 16}}/>
             <SearchBar term={term} onTermChange={newTerm => setTerm(newTerm)} />
         </View>
 
-        <View style={[styles.events, {marginTop: 15}]}>
+        <View style={[styles.events, {marginTop: 0}]}>
             <SafeAreaView>
                 <FlatList
                     data={eventList.filter((val=>{
@@ -55,12 +55,12 @@ const styles = StyleSheet.create({
         marginHorizontal: 20,
         flexDirection: 'row',
         justifyContent: 'space-between',
-        marginTop: 100,
+        marginTop: 110,
         alignItems: 'flex-end'
     },
     eventSorter: {
-        marginTop: 15,
-        marginLeft: 30,
+        marginTop: 10,
+        marginBottom: 2,
         flexDirection: 'row'
     },
     events: {
