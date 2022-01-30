@@ -46,7 +46,7 @@ function HomeScreen({ navigation }) {
           <Text style={styles.buttonText}>My Favorites</Text>
         </Pressable>
       
-        <Pressable style={styles.homeButton}>
+        <Pressable style={styles.homeButton} onPress={() => navigation.navigate('QR Scanner')}>
           <Image 
             source={require('../../assets/QrCode.png')}
           />

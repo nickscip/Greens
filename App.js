@@ -1,15 +1,12 @@
 import * as React from 'react';
-import { View, StyleSheet } from 'react-native';
 import { NavigationContainer} from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './src/screens/HomeScreen';
 import EventsScreen from './src/screens/Events';
 import Logo from './src/components/Logo';
-
-
+import QRScanner from './src/screens/QR_Scanner';
 
 const Stack = createNativeStackNavigator();
-
 
 function App() {
   return (
@@ -24,6 +21,11 @@ function App() {
           name="Events"
           component={EventsScreen}
           options={{ headerTitle: (props) => <Logo/>, headerTransparent: true, headerBackVisible: true, headerBackTitleVisible: false}}
+        />
+        <Stack.Screen
+          name="QR Scanner"
+          component={QRScanner}
+          options={{headerTitle: (props) => <Logo/>, headerTransparent: true, headerBackVisible: true, headerBackTitleVisible: false}}
         />
       </Stack.Navigator>
     </NavigationContainer>
