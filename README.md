@@ -8,10 +8,10 @@ From the brain of UX Designer/Anthropologist Amor Manzanares, an artist in her o
 new artists.
 
 Finished:
-*Home Page
-*Events Page
+* Home Page
+* Events Page
 
 To Do:
-*QR Scanner
-*Museum Locator
-*Tickets Page
+* QR Scanner
+* Museum Locator
+* Tickets Page
